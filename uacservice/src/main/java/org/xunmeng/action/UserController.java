@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.xunmeng.model.Product;
 import org.xunmeng.model.User;
 import org.xunmeng.service.IUserService;
 import org.xunmeng.util.JsonUtil;
@@ -24,7 +23,7 @@ public class UserController {
         }
 
         System.err.println("========>" + JsonUtil.beanToString(user));
-        userService.saveUser(user);
+        // userService.saveUser(user);
         return "success";
     }
 
@@ -33,11 +32,15 @@ public class UserController {
         User user = new User();
         user.setName(name);
 
-        Product product = new Product();
-        product.setName("ipad");
+        System.err.println("==================name:" + name);
 
-        userService.saveUser(user, product);
-        System.out.println("save user success.");
+        // System.out.println("hello,world");
+        //
+        // Product product = new Product();
+        // product.setName("ipad");
+        //
+        // userService.saveUser(user, product);
+        // System.out.println("save user success.");
         return "luoyoub";
     }
 }
